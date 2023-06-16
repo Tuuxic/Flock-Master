@@ -3,51 +3,6 @@ using System.Collections.Generic;
 namespace GameEvents
 {
 
-    // Base class for all GameEvents
-    public abstract class GameEvent
-    {   /// <summary>
-        /// each event will be able to test its data.
-        /// this way, it isn't important if a sounddesigner or programmer implement/change an event,
-        /// as both will be notified in case a misunderstanding / miscommunication occured.
-        /// This is a convenient way to optimize maintainability, as the code will tell you what's wrong.
-        /// </summary>
-        public virtual bool isValid() { return true; }
-    }
-
-    /*
-        To use this thing, first we declare a GameEvent subclass. This event can carry with it all of the parameters needed by the 	objects listening for the event.
-
-        public class SomethingHappenedEvent : GameEvent
-        {
-            // Add event parameters here
-        }
-
-        Registering to listen for the event looks like this:
-
-        public class SomeObject : MonoBehaviour
-        {
-            void OnEnable ()
-            {
-                GameEventManager.AddListener<SomethingHappenedEvent>(OnSomethingHappened);
-            }
-
-            void OnDisable ()
-            {
-                GameEventManager.RemoveListener<SomethingHappenedEvent>(OnSomethingHappened);
-            }
-
-            void OnSomethingHappened (SomethingHappenedEvent e)
-            {
-                // Handle event here
-            }
-        }
-
-        And finally, to raise the event, do this:
-
-        GameEventManager.Raise(new SomethingHappenedEvent());
-
-    */
-
     public static class GameEventManager
     {
         public delegate void EventDelegate<in T>(T e) where T : GameEvent;
@@ -131,4 +86,4 @@ namespace GameEvents
 
     }
 
-} // namespace
+} 

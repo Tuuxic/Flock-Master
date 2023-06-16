@@ -10,13 +10,11 @@ public class EnemyAttack : EnemyState
     public override void Enter(EnemyController entity)
     {
         // Nothing
-        Debug.Log("Entered Attack");
     }
 
     public override void Exit(EnemyController entity)
     {
         // Nothing
-        Debug.Log("Exited Attack");
     }
 
     public override void Reason(EnemyController entity)

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Companion
   - Flock
+  - UI
+  - EventSystem
   layers:
   - Default
   - TransparentFX
