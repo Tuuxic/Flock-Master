@@ -1,23 +1,36 @@
 using GameEvents;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameOverBehaviour : MonoBehaviour
+public class GameWinBehaviour : MonoBehaviour
 {
-
+    public Text textDisplay;
+    private float startTime;
     void Start()
     {
         gameObject.SetActive(false);
-        GameEventManager.AddListener<GameOverEvent>(OnGameOver);   
+        GameEventManager.AddListener<GameWinEvent>(OnWin);
+        startTime = Time.time;
     }
     public void Setup()
     {
+        float playtime = Time.time - startTime;
         gameObject.SetActive(true);
         Cursor.visible = gameObject.activeSelf;
         Cursor.lockState = CursorLockMode.Confined;
 
         // Disable Game Events
         GameEventManager.isRaiseEnabled = false;
+
+        if(textDisplay != null)
+        {
+            int minutes = (int) playtime / 60;
+            int seconds = (int) playtime % 60;
+            textDisplay.text = "Playtime: " + minutes.ToString("D2") + ":" + seconds.ToString("D2");
+        }
 
         // Disable all irelavant Game Objects
         foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
@@ -38,7 +51,7 @@ public class GameOverBehaviour : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void OnGameOver(GameOverEvent e)
+    void OnWin(GameWinEvent e)
     {
         Setup();
     }

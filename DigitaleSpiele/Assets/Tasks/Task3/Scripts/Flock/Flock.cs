@@ -15,7 +15,7 @@ public class Flock : MonoBehaviour
 
     private float timeSinceUpdate = 0;
 
-    void Start()
+    void Awake()
     {
         manager.registerMember(gameObject);
         agent = GetComponent<NavMeshAgent>();
@@ -71,7 +71,7 @@ public class Flock : MonoBehaviour
 
         }
 
-        flockCenter = groupSize != 0 ? (flockCenter / groupSize) : (flockCenter);
+        flockCenter = groupSize != 0 ? (flockCenter / groupSize) : (this.transform.position);
         flockAvoid = avoidSize != 0 ? (flockAvoid / avoidSize) : (flockAvoid);
     }
 
@@ -103,6 +103,12 @@ public class Flock : MonoBehaviour
         controller.Sprinting = groupSize != 0;
 
         hunterAvoid = groupSize != 0 ? (hunterAvoid / groupSize) : (hunterAvoid);
+    }
+
+
+    void OnDestroy()
+    {
+        manager.removeMember(gameObject);
     }
 
 }

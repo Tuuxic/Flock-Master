@@ -28,5 +28,10 @@ public class FlockManager : MonoBehaviour
         allFlockMember.Add(member);
     }
 
+    public void removeMember(GameObject member)
+    {
+        allFlockMember.Remove(member);
+    }
+
     
 }

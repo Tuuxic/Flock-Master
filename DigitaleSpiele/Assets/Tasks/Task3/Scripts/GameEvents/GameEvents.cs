@@ -26,6 +26,8 @@ namespace GameEvents
 
     public class GameOverEvent : GameEvent { }
 
+    public class GameWinEvent : GameEvent { }
+
 }
 
 
