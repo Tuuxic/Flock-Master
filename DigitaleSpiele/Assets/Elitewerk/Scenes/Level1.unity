@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 26595475}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ GameObject:
   - component: {fileID: 494237779}
   - component: {fileID: 494237778}
   - component: {fileID: 494237777}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: GroundEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   - component: {fileID: 727671598}
   - component: {fileID: 727671597}
   - component: {fileID: 727671596}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: GroundCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2680,7 +2680,8 @@ MonoBehaviour:
   groundCheck: {fileID: 478526847}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  respawnBelow: -10
 --- !u!1 &741223345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8025,6 +8026,10 @@ PrefabInstance:
     - target: {fileID: 4061858514277787692, guid: 93b2ef0ae55f5dca589dd6667267213d, type: 3}
       propertyPath: m_Name
       value: GroundEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061858514277787692, guid: 93b2ef0ae55f5dca589dd6667267213d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4496909730339729895, guid: 93b2ef0ae55f5dca589dd6667267213d, type: 3}
       propertyPath: m_RootOrder
