@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 707160959002763850, guid: ea0edf84d2a49653b9eaa235a4acbb11, type: 3}
       propertyPath: m_Name
-      value: Can Variant
+      value: CanStatic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912709016955278804, guid: ea0edf84d2a49653b9eaa235a4acbb11, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912709016955278804, guid: ea0edf84d2a49653b9eaa235a4acbb11, type: 3}
+      propertyPath: m_Mass
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8116421024095173915, guid: ea0edf84d2a49653b9eaa235a4acbb11, type: 3}
       propertyPath: m_RootOrder
@@ -56,8 +64,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3912709016955278804, guid: ea0edf84d2a49653b9eaa235a4acbb11, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
