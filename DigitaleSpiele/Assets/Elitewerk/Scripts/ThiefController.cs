@@ -9,6 +9,7 @@ public class ThiefController : MonoBehaviour
 
     public TwoBoneIKConstraint twoBoneIKConstraint;
     public Transform leftHandTarget;
+    public float maxGrabDistance = 5f;
 
     private Rigidbody rb;
 
@@ -45,41 +46,49 @@ public class ThiefController : MonoBehaviour
             animator.SetTrigger("Dab");
         }
 
-
-        //twoBoneIKConstraint.weight = Mathf.Lerp(0, 1, t);
-        //t += 0.1f * Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GameObject[] cans = GameObject.FindGameObjectsWithTag("Can");
-            GameObject closestCan = null;
-
-            float minDistance = Mathf.Infinity;
-            Vector3 currentPosition = transform.position;
-
-            foreach (GameObject can in cans)
-            {
-                float distance = Vector3.Distance(can.transform.position, currentPosition);
-                if (distance < minDistance)
-                {
-                    closestCan = can;
-                    minDistance = distance;
-                }
-            }
-
-            if (closestCan != null)
-            {
-                leftHandTarget.position = closestCan.transform.position;
-                twoBoneIKConstraint.weight = 1;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("Q pressed");
-            twoBoneIKConstraint.weight = 0;
-        }
+        // Always reach for closes can
+        MaybeReachForClosestCan();
     }
 
-    //private float t = 0f;
+    private void MaybeReachForClosestCan()
+    {
+        GameObject closestCan = getClosestCan();
+
+        if (closestCan != null)
+        {
+            leftHandTarget.position = closestCan.transform.position;
+
+            // Calculate weight based on our distance to the can.
+            // The closer we are, the more we reach for it. if we are far away, we don't reach at all.
+            float distance = Vector3.Distance(transform.position, closestCan.transform.position);
+            float weight = Mathf.Clamp01(1 - (distance / maxGrabDistance));
+            twoBoneIKConstraint.weight = weight;
+        }
+        else
+        {
+            twoBoneIKConstraint.weight = 0;
+        }
+
+    }
+
+    private GameObject getClosestCan()
+    {
+        GameObject[] cans = GameObject.FindGameObjectsWithTag("Can");
+        GameObject closestCan = null;
+
+        float minDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (GameObject can in cans)
+        {
+            float distance = Vector3.Distance(can.transform.position, currentPosition);
+            if (distance < minDistance)
+            {
+                closestCan = can;
+                minDistance = distance;
+            }
+        }
+
+        return closestCan;
+    }
 }
