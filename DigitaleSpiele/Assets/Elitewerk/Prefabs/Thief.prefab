@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5705529809982845116}
+  - component: {fileID: 3738760322463780404}
   m_Layer: 0
   m_Name: FullBody
   m_TagString: Untagged
@@ -34,6 +35,29 @@ Transform:
   m_Father: {fileID: 7170577575538531374}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3738760322463780404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325158397517342446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 5705529809982845116}
+  - {fileID: 8929231606941394700}
+  - {fileID: 5925271092953435281}
+  - {fileID: 1012052478838819711}
 --- !u!1 &694285259276787975
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +70,9 @@ GameObject:
   - component: {fileID: 862719802924525243}
   - component: {fileID: 3699271384285158606}
   - component: {fileID: 7787756348157407977}
+  - component: {fileID: 8804778378151325727}
+  - component: {fileID: 4723554814507389659}
+  - component: {fileID: 7187219879432845741}
   m_Layer: 0
   m_Name: LegRightModel
   m_TagString: Untagged
@@ -139,6 +166,67 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &8804778378151325727
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694285259276787975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4723554814507389659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694285259276787975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 0}
+    m_Active: 1
+  m_Effectors: []
+--- !u!114 &7187219879432845741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694285259276787975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Data:
+    m_Root: {fileID: 0}
+    m_Mid: {fileID: 0}
+    m_Tip: {fileID: 0}
+    m_Target: {fileID: 0}
+    m_Hint: {fileID: 0}
+    m_TargetPositionWeight: 1
+    m_TargetRotationWeight: 1
+    m_HintWeight: 1
+    m_MaintainTargetPositionOffset: 0
+    m_MaintainTargetRotationOffset: 0
 --- !u!1 &819077175411477739
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +514,7 @@ GameObject:
   - component: {fileID: 7170577575538531374}
   - component: {fileID: -7603772419689054004}
   - component: {fileID: 5292895645492422621}
+  - component: {fileID: 4291394046194175426}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -492,7 +581,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae130166cf20ba8aa80d98c0813fdd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   moveSpeed: 5
+--- !u!114 &4291394046194175426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973625760807522144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 7170577575538531374}
+  - {fileID: 5705529809982845116}
+  - {fileID: 8929231606941394700}
+  - {fileID: 5925271092953435281}
+  - {fileID: 1012052478838819711}
+  - {fileID: 2287029513399069895}
+  - {fileID: 5357080993239879485}
+  - {fileID: 7721501495643400713}
+  - {fileID: 6922533208645777011}
+  - {fileID: 3305493365814578163}
+  - {fileID: 5689271814463258766}
+  - {fileID: 6490476957725623}
+  - {fileID: 121660344143198889}
+  - {fileID: 418823829709799587}
+  - {fileID: 8881335866781639580}
+  - {fileID: 4385045967830890901}
+  - {fileID: 4405170637623218921}
 --- !u!1 &5400247687961887094
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +631,8 @@ GameObject:
   - component: {fileID: 3526661902044713801}
   - component: {fileID: 3868741359440007041}
   - component: {fileID: 6972169536095114506}
+  - component: {fileID: 600230999872142396}
+  - component: {fileID: 6636079263660615618}
   m_Layer: 0
   m_Name: LegLeftModel
   m_TagString: Untagged
@@ -598,6 +726,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &600230999872142396
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400247687961887094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6636079263660615618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400247687961887094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 0}
+    m_Active: 1
+  m_Effectors: []
 --- !u!1 &5624627427561660479
 GameObject:
   m_ObjectHideFlags: 0
