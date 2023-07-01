@@ -53,7 +53,8 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateScoreText()
     {
-        scoreText.text = "TIME: " + (endTimestamp - startTimestamp).ToString("F2");
+        string seconds = (endTimestamp - startTimestamp).ToString("F2");
+        scoreText.text = "TIME: " + seconds + " seconds";
     }
 
     public void RegisterStudent()
