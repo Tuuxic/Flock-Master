@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ThiefController : MonoBehaviour
 {
+    public Animator animator;
     public float moveSpeed = 5f;
 
     private Rigidbody rb;
@@ -26,6 +27,11 @@ public class ThiefController : MonoBehaviour
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             rb.transform.rotation = Quaternion.Lerp(rb.transform.rotation, toRotation, Time.deltaTime * 10f);
+            animator.SetTrigger("WalkingStarted");
+        }
+        else
+        {
+            animator.SetTrigger("WalkingStopped");
         }
     }
 }

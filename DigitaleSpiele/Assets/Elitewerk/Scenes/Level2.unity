@@ -707,6 +707,10 @@ PrefabInstance:
       value: Thief
       objectReference: {fileID: 0}
     - target: {fileID: 5292895645492422621, guid: 5c5d250aeed3b9f8189b23c86c4f882a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 299867763}
+    - target: {fileID: 5292895645492422621, guid: 5c5d250aeed3b9f8189b23c86c4f882a, type: 3}
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 299867766}
