@@ -10,6 +10,7 @@ TagManager:
   - Flock
   - UI
   - EventSystem
+  - Hunter
   layers:
   - Default
   - TransparentFX
