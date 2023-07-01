@@ -33,5 +33,11 @@ public class ThiefController : MonoBehaviour
         {
             animator.SetTrigger("WalkingStopped");
         }
+
+        // Dab
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Dab");
+        }
     }
 }
