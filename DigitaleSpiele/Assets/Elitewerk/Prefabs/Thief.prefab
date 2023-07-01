@@ -393,8 +393,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355096483509903562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0, z: 1.33}
-  m_LocalScale: {x: 0.25, y: 0.1, z: 0.25}
+  m_LocalPosition: {x: 0.25, y: 0.45, z: 1.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8881335866781639580}
@@ -415,7 +415,7 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 0
-  body: {fileID: 5705529809982845116}
+  body: {fileID: 418823829709799587}
   otherFoot: {fileID: 8860200532374202705}
   speed: 1
   stepDistance: 4
@@ -447,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376606659802001110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.96, y: 0.16, z: 1.04}
+  m_LocalPosition: {x: 1.2, y: -0.06, z: 0.01}
   m_LocalScale: {x: 0.25, y: 0.1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -469,7 +469,7 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 0
-  body: {fileID: 5705529809982845116}
+  body: {fileID: 4385045967830890901}
   otherFoot: {fileID: 7918942008780571906}
   speed: 1
   stepDistance: 4
