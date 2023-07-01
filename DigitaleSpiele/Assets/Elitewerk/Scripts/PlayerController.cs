@@ -8,14 +8,17 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 2f;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public float respawnBelow = -7f;
 
     private Rigidbody rb;
     private bool isGrounded;
     private float lastDashTimestamp;
+    private Vector3 spawnPoint;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        spawnPoint = transform.position;
     }
 
     private void Update()
@@ -57,6 +60,12 @@ public class PlayerController : MonoBehaviour
             if (lastDashTimestamp + dashCooldown > Time.time) return;
             rb.AddForce(rb.transform.forward * dashForce, ForceMode.Impulse);
             lastDashTimestamp = Time.time;
+        }
+
+        // Respawn
+        if (transform.position.y < respawnBelow)
+        {
+            transform.position = spawnPoint;
         }
     }
 }
