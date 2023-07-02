@@ -11,6 +11,7 @@ TagManager:
   - UI
   - EventSystem
   - Hunter
+  - Can
   layers:
   - Default
   - TransparentFX
