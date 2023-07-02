@@ -12,7 +12,6 @@ public class ThiefCameraController : MonoBehaviour
     void Start()
     {
         offset = transform.position - target.position;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void LateUpdate()
